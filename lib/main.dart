@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sneakin/view/home/sneakHome.dart';
+import 'package:sneakin/view/home/sneakSocialMediaList.dart';
+import 'package:sneakin/view/twitter/twitter.dart';
 
 void main() => runApp(SneakInApplication());
 
@@ -9,33 +12,22 @@ class SneakInApplication extends StatelessWidget {
     return MaterialApp(
       title: 'Sneak In',
       home: SneakHomePage(),
-    );
-  }
-}
-
-class SneakHomePage extends StatefulWidget {
-  @override
-  _SneakHomePageState createState() => _SneakHomePageState();
-}
-
-class _SneakHomePageState extends State<SneakHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Sneak In')),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text('Taners'),
-              accountEmail: Text('taners@tenere.com'),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage('http://i.pravatar.cc/300'),
-              ),
-            ),
-          ],
-        ),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/sneakSocialMediaList": (context) => SneakSocialMediaListPage(),
+        "/facebook": (context) => SneakHomePage(),
+        "/twitter": (context) => TwitterPage(),
+        "/instagram": (context) => SneakHomePage(),
+        "/linkedIn": (context) => SneakHomePage(),
+        "/youtube": (context) => SneakHomePage(),
+        "/gmail": (context) => SneakHomePage(),
+        "/flickr": (context) => SneakHomePage(),
+        "/pinterest": (context) => SneakHomePage(),
+        "/soundcloud": (context) => SneakHomePage(),
+        "/mynet": (context) => SneakHomePage(),
+        "/hi5": (context) => SneakHomePage(),
+        "/tumblr": (context) => SneakHomePage()
+      },
     );
   }
 }
