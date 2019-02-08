@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:convert' as convert;
+import 'package:sneakin/service/twitter_service/twitterService.dart';
 
 class SneakHomePage extends StatefulWidget {
   @override
@@ -6,8 +8,23 @@ class SneakHomePage extends StatefulWidget {
 }
 
 searchPeople(BuildContext context, [String name, String surname]) {
+  if (name.isEmpty && surname.isEmpty) {
+    print("İsim veya Soyisimden en az biri dolu olmalıdır!");
+    return;
+  }
+
   print("name: $name, surname: $surname");
-  Navigator.pushNamed(context, "/sneakSocialMediaList");
+  Navigator.pushNamed(context, "/sneakSideMenu");
+
+  TwitterService twitterService = new TwitterService();
+  twitterService
+      .getRequest("http://jsonplaceholder.typicode.com/users")
+      .then((response) {
+    if (response.statusCode == 200) {
+      var jsonResponse = convert.jsonDecode(response.body);
+      print("json response :  $jsonResponse");
+    }
+  });
 }
 
 class _SneakHomePageState extends State<SneakHomePage> {
@@ -21,6 +38,13 @@ class _SneakHomePageState extends State<SneakHomePage> {
     nameController.dispose();
     surnameController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    nameController.clear();
+    surnameController.clear();
+    super.initState();
   }
 
   @override
@@ -126,12 +150,11 @@ class _SneakHomePageState extends State<SneakHomePage> {
       ),
       body: GestureDetector(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              alignment: Alignment.topCenter,
-              padding: EdgeInsets.all(10.0),
               color: Colors.lightBlue[50],
+              padding: EdgeInsets.only(top: 40.0),
               child: Row(
                 children: <Widget>[
                   Expanded(
@@ -140,7 +163,7 @@ class _SneakHomePageState extends State<SneakHomePage> {
                       "Search People",
                       textDirection: TextDirection.ltr,
                       style: TextStyle(
-                          fontSize: 40,
+                          fontSize: 30,
                           fontStyle: FontStyle.italic,
                           color: Colors.blue,
                           fontWeight: FontWeight.bold),
@@ -153,44 +176,53 @@ class _SneakHomePageState extends State<SneakHomePage> {
             Expanded(
               child: Container(
                 alignment: Alignment.topCenter,
-                padding: EdgeInsets.all(40.0),
+                padding: EdgeInsets.only(top: 80.0),
                 color: Colors.lightBlue[50],
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Expanded(
-                      child: TextField(
-                        maxLength: 20,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            decoration: TextDecoration.none,
-                            color: Colors.black),
-                        controller: nameController,
-                        key: nameGlobalController,
-                        textDirection: TextDirection.ltr,
-                        decoration: InputDecoration(hintText: "Name"),
+                      child: Container(
+                        padding: EdgeInsets.all(20.0),
+                        child: TextField(
+                          maxLength: 20,
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              decoration: TextDecoration.none,
+                              color: Colors.black),
+                          controller: nameController,
+                          key: nameGlobalController,
+                          textDirection: TextDirection.ltr,
+                          decoration: InputDecoration(labelText: "Name"),
+                          keyboardType: TextInputType.text,
+                        ),
                       ),
                     ),
                     Expanded(
-                      child: TextField(
-                        maxLength: 20,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.black,
-                            decoration: TextDecoration.none),
-                        controller: surnameController,
-                        key: surnameGlobalController,
-                        textDirection: TextDirection.ltr,
-                        decoration: InputDecoration(hintText: "Surname"),
+                      child: Container(
+                        padding: EdgeInsets.all(20.0),
+                        child: TextField(
+                          maxLength: 20,
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                              color: Colors.black,
+                              decoration: TextDecoration.none),
+                          controller: surnameController,
+                          key: surnameGlobalController,
+                          textDirection: TextDirection.ltr,
+                          decoration: InputDecoration(labelText: "Surname"),
+                          keyboardType: TextInputType.text,
+                        ),
                       ),
                     ),
                     IconButton(
                       icon: Icon(Icons.search),
                       tooltip: 'Search',
                       onPressed: () {
-                        searchPeople(
-                            context, nameController.text, surnameController.text);
+                        searchPeople(context, nameController.text,
+                            surnameController.text);
                       },
                     ),
                   ],
