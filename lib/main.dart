@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sneakin/view/home/sneakHome.dart';
-import 'package:sneakin/view/home/sneakSideMenu.dart';
-import 'package:sneakin/view/twitter/twitter.dart';
+import 'package:sneakin/view/home/SneakHomePage.dart';
+import 'package:sneakin/view/home/SneakSideMenuPage.dart';
+import 'package:sneakin/view/home/SocialMediaResultPage.dart';
+import 'package:sneakin/view/twitter/TwitterPage.dart';
 
 void main() => runApp(SneakInApplication());
 
@@ -15,6 +16,7 @@ class SneakInApplication extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/sneakSideMenu": (context) => SneakSideMenuPage(),
+        "/socialMediaResult": (context) => SocialMediaResultPage(),
         "/facebook": (context) => SneakHomePage(),
         "/twitter": (context) => TwitterPage(),
         "/instagram": (context) => SneakHomePage(),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sneakin/view/twitter/twitter.dart';
+import 'package:sneakin/view/twitter/TwitterPage.dart';
 
-class SneakSideMenuPage extends StatefulWidget {
+class SocialMediaResultPage extends StatefulWidget {
   @override
-  _SneakSideMenuPageState createState() => _SneakSideMenuPageState();
+  _SocialMediaResultPageState createState() => _SocialMediaResultPageState();
 }
 
-class _SneakSideMenuPageState extends State<SneakSideMenuPage> {
+class _SocialMediaResultPageState extends State<SocialMediaResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +31,12 @@ class _SneakSideMenuPageState extends State<SneakSideMenuPage> {
                         value: value,
                         child: Row(
                           children: <Widget>[
-                            Image.asset("assets/icons/Icon-hdpi.png",
-                            height: 50.0,
-                            width: 60.0,
-                            fit: BoxFit.cover,),
+                            Image.asset(
+                              "assets/icons/Icon-hdpi.png",
+                              height: 50.0,
+                              width: 60.0,
+                              fit: BoxFit.cover,
+                            ),
                             Center(
                               child: Text(
                                 value,
@@ -449,87 +451,8 @@ class _SneakSideMenuPageState extends State<SneakSideMenuPage> {
                       MaterialPageRoute(
                           builder: (context) => TwitterPage("TeNeRe")));
                 },
-                //  color: Color.fromRGBO(66, 103, 178, 5),
-                // leading: Image.network("http://i.pravatar.cc/300"),
               ),
             ),
-            /*
-            RaisedButton(
-              child: Text("Twitter"),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => TwitterPage("TeNeRe")));
-              },
-              color: Color.fromRGBO(56, 161, 243, 5),
-              elevation: 20.0,
-              //  leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Instagram"),
-              color: Color.fromRGBO(195, 42, 163, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              //  leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("LinkedIn"),
-              color: Color.fromRGBO(0, 119, 181, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              //  leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Youtube"),
-              color: Color.fromRGBO(237, 56, 51, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Gmail"),
-              color: Color.fromRGBO(219, 68, 55, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Flickr"),
-              color: Color.fromRGBO(244, 0, 131, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Pinterest"),
-              color: Color.fromRGBO(189, 8, 28, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Soundcloud"),
-              color: Color.fromRGBO(255, 85, 0, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Hi5"),
-              color: Color.fromRGBO(66, 103, 178, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            RaisedButton(
-              child: Text("Tumblr"),
-              color: Color.fromRGBO(54, 70, 93, 5),
-              elevation: 20.0,
-              onPressed: () => {},
-              // leading: Image.network("http://i.pravatar.cc/300"),
-            ),
-            */
           ],
         ),
       ),
