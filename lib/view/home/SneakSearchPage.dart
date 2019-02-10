@@ -82,7 +82,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.only(left: 5.0),
                       child: TextField(
                         maxLength: 20,
                         textAlign: TextAlign.justify,
@@ -100,7 +100,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   ),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.all(20.0),
+                      padding: EdgeInsets.only(left: 5.0),
                       child: TextField(
                         maxLength: 20,
                         textAlign: TextAlign.justify,
