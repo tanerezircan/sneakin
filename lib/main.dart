@@ -28,7 +28,6 @@ class SneakInApplication extends StatelessWidget {
         "/flickr": (context) => SneakHomePage(),
         "/pinterest": (context) => SneakHomePage(),
         "/soundcloud": (context) => SneakHomePage(),
-        "/mynet": (context) => SneakHomePage(),
         "/hi5": (context) => SneakHomePage(),
         "/tumblr": (context) => SneakHomePage()
       },

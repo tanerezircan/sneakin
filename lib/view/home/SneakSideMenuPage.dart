@@ -83,13 +83,6 @@ class _SneakSideMenuPageState extends State<SneakSideMenuPage> {
           ),
           RaisedButton(
             child: Text(
-              "Mynet",
-              textDirection: TextDirection.ltr,
-            ),
-            onPressed: () => {},
-          ),
-          RaisedButton(
-            child: Text(
               "Hi5",
               textDirection: TextDirection.ltr,
             ),
