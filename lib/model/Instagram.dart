@@ -54,7 +54,7 @@ class Instagram implements IEntity<Instagram> {
   }
 
   @override
-  Instagram getObjectFromJson(Object obj) {
+  Instagram getObjectFromJson(dynamic obj) {
     Instagram inst = new Instagram();
     try {
       var jsonObj = json.decode(obj);

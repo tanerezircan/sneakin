@@ -54,7 +54,7 @@ class Youtube implements IEntity<Youtube> {
   }
 
   @override
-  Youtube getObjectFromJson(Object obj) {
+  Youtube getObjectFromJson(dynamic obj) {
     Youtube yt = new Youtube();
     try {
       var jsonObj = json.decode(obj);

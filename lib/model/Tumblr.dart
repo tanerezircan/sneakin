@@ -54,7 +54,7 @@ class Tumblr implements IEntity<Tumblr> {
   }
 
   @override
-  Tumblr getObjectFromJson(Object obj) {
+  Tumblr getObjectFromJson(dynamic obj) {
     Tumblr tb = new Tumblr();
     try {
       var jsonObj = json.decode(obj);

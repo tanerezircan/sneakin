@@ -54,7 +54,7 @@ class Gmail implements IEntity<Gmail> {
   }
 
   @override
-  Gmail getObjectFromJson(Object obj) {
+  Gmail getObjectFromJson(dynamic obj) {
     Gmail gm = new Gmail();
     try {
       var jsonObj = json.decode(obj);

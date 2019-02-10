@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakin/view/facebook/FacebookDetailPage.dart';
 import 'package:sneakin/view/home/SneakHomePage.dart';
 import 'package:sneakin/view/home/SneakSideMenuPage.dart';
 import 'package:sneakin/view/home/SocialMediaResultPage.dart';
@@ -18,6 +19,7 @@ class SneakInApplication extends StatelessWidget {
         "/sneakSideMenu": (context) => SneakSideMenuPage(),
         "/socialMediaResult": (context) => SocialMediaResultPage(),
         "/facebook": (context) => SneakHomePage(),
+        "/facebookDetail": (context) => FacebookDetailPage(),
         "/twitter": (context) => TwitterPage(),
         "/instagram": (context) => SneakHomePage(),
         "/linkedIn": (context) => SneakHomePage(),

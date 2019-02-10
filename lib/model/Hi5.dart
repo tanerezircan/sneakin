@@ -54,7 +54,7 @@ class Hi5 implements IEntity<Hi5> {
   }
 
   @override
-  Hi5 getObjectFromJson(Object obj) {
+  Hi5 getObjectFromJson(dynamic obj) {
     Hi5 hi = new Hi5();
     try {
       var jsonObj = json.decode(obj);

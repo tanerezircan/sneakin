@@ -54,7 +54,7 @@ class LinkedIn implements IEntity<LinkedIn> {
   }
 
   @override
-  LinkedIn getObjectFromJson(Object obj) {
+  LinkedIn getObjectFromJson(dynamic obj) {
     LinkedIn lnk = new LinkedIn();
     try {
       var jsonObj = json.decode(obj);

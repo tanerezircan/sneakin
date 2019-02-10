@@ -54,7 +54,7 @@ class Flickr implements IEntity<Flickr> {
   }
 
   @override
-  Flickr getObjectFromJson(Object obj) {
+  Flickr getObjectFromJson(dynamic obj) {
     Flickr fl = new Flickr();
     try {
       var jsonObj = json.decode(obj);

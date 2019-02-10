@@ -54,7 +54,7 @@ class Soundcloud implements IEntity<Soundcloud> {
   }
 
   @override
-  Soundcloud getObjectFromJson(Object obj) {
+  Soundcloud getObjectFromJson(dynamic obj) {
     Soundcloud sc = new Soundcloud();
     try {
       var jsonObj = json.decode(obj);

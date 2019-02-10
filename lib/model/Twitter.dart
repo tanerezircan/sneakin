@@ -54,7 +54,7 @@ class Twitter implements IEntity<Twitter> {
   }
 
   @override
-  Twitter getObjectFromJson(Object obj) {
+  Twitter getObjectFromJson(dynamic obj) {
     Twitter tw = new Twitter();
     try {
       var jsonObj = json.decode(obj);

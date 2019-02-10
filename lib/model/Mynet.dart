@@ -54,7 +54,7 @@ class Mynet implements IEntity<Mynet> {
   }
 
   @override
-  Mynet getObjectFromJson(Object obj) {
+  Mynet getObjectFromJson(dynamic obj) {
     Mynet my = new Mynet();
     try {
       var jsonObj = json.decode(obj);

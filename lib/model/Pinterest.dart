@@ -54,7 +54,7 @@ class Pinterest implements IEntity<Pinterest> {
   }
 
   @override
-  Pinterest getObjectFromJson(Object obj) {
+  Pinterest getObjectFromJson(dynamic obj) {
     Pinterest pn = new Pinterest();
     try {
       var jsonObj = json.decode(obj);
