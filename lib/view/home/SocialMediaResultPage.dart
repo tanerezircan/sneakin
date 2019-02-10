@@ -130,27 +130,6 @@ class _SocialMediaResultPageState extends State<SocialMediaResultPage> {
           itemBuilder: (BuildContext context, int index) {
             return Container(
               padding: EdgeInsets.only(top: 2.0),
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.red,
-                      offset: new Offset(20.0, 10.0),
-                      blurRadius: 20.0,
-                      spreadRadius: 40.0),
-                       new BoxShadow(
-                color: Colors.yellow,
-                offset: new Offset(20.0, 10.0),
-                blurRadius: 20.0,
-                spreadRadius: 20.0
-            ),
-            new BoxShadow(
-                color: Colors.green,
-                offset: new Offset(10.0, 5.0),
-                blurRadius: 20.0,
-                spreadRadius: 5.0
-            )
-                ],
-              ),
               child: Card(
                 // color: Colors.lightBlue[50],
                 elevation: 30.0,
