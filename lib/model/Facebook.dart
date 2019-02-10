@@ -26,7 +26,7 @@ class Facebook implements IEntity<Facebook> {
   String get getImage => this.image;
   String get getTitle => this.title;
   Color get getColor => this.color;
-  List get getChildren => this.children;
+  List<Facebook> get getChildren => this.children;
 
   set setUserId(String userId) => this.userId = userId;
   set setName(String name) => this.name = name;
