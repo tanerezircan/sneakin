@@ -9,8 +9,7 @@ class SocialMediaResultPage extends StatefulWidget {
 
 final List<Facebook> data = <Facebook>[
   Facebook("Facebook", <Facebook>[
-    Facebook(
-        "TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe TeNeRe"),
+    Facebook("TeNeRe TeNeRe"),
     Facebook("TnR TnR"),
     Facebook("Jineko"),
     Facebook("Taners Ezircans"),
