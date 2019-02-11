@@ -75,7 +75,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
           Expanded(
             child: Container(
               alignment: Alignment.topCenter,
-              padding: EdgeInsets.only(top: 80.0),
+              padding: EdgeInsets.only(top: 80.0, left: 30.0),
               // color: Colors.lightBlue[50],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
