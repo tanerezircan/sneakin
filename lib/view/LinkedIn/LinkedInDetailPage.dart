@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:sneakin/model/Gmail.dart';
+import 'package:sneakin/model/LinkedIn.dart';
 
-class GmailDetailPage extends StatefulWidget {
-  final Gmail gmail;
+class LinkedInDetailPage extends StatefulWidget {
+  final LinkedIn linkedIn;
 
-  const GmailDetailPage({Key key, this.gmail}) : super(key: key);
+  const LinkedInDetailPage({Key key, this.linkedIn}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => GmailDetailPageState(gmail);
+  State<StatefulWidget> createState() => LinkedInDetailPageState(linkedIn);
 }
 
-class GmailDetailPageState extends State<GmailDetailPage> {
-  final Gmail gmail;
+class LinkedInDetailPageState extends State<LinkedInDetailPage> {
+  final LinkedIn linkedIn;
 
-  GmailDetailPageState(this.gmail);
+  LinkedInDetailPageState(this.linkedIn);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Gmail"),
+        title: Text("TeNeRe on LinkedIn"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),

@@ -1,24 +1,28 @@
+import 'dart:convert';
+
 import 'package:sneakin/utility/interface/IEntity.dart';
 
 class Company implements IEntity<Company> {
-  String _id;
-  String _name;
-  String _catchPhrase;
-  String _bs;
+  final String id;
+  final String name;
+  final String catchPhrase;
+  final String bs;
 
-  get getId =>this._id;
-  get getName =>this._name;
-  get getCatchPhrase =>this._catchPhrase;
-  get getBs =>this._bs;
-
-  set setId(String id) => this._id = id;
-  set setName(String name) => this._name = name;
-  set setCathPhrase(String catchPhrase)=> this._catchPhrase = catchPhrase;
-
+  const Company({this.id, this.name, this.catchPhrase, this.bs});
 
   @override
-  Company getObjectFromJson(obj) {
-    // TODO: implement getObjectFromJson
-    return null;
+  Company getObjectFromJson(dynamic obj) {
+    Company company;
+    try {
+      var jsonObj = json.decode(obj);
+      company = new Company(
+          id: jsonObj["id"],
+          name: jsonObj["name"],
+          catchPhrase: jsonObj["catchPhrase"],
+          bs: jsonObj["bs"]);
+    } catch (e) {
+      throw Exception("Company json decode exception : " + e);
+    }
+    return company;
   }
 }

@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Facebook.dart';
+import 'package:sneakin/model/Flickr.dart';
 import 'package:sneakin/model/Gmail.dart';
+import 'package:sneakin/model/Hi5.dart';
 import 'package:sneakin/model/Instagram.dart';
 import 'package:sneakin/model/LinkedIn.dart';
 import 'package:sneakin/model/Pinterest.dart';
+import 'package:sneakin/model/Soundcloud.dart';
+import 'package:sneakin/model/Tumblr.dart';
 import 'package:sneakin/model/Twitter.dart';
 import 'package:sneakin/model/Youtube.dart';
+import 'package:sneakin/view/LinkedIn/LinkedInPage.dart';
 import 'package:sneakin/view/facebook/FacebookPage.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/bezier_bounce_footer.dart';
 import 'package:flutter_easyrefresh/bezier_hour_glass_header.dart';
+import 'package:sneakin/view/flickr/FlickrPage.dart';
 import 'package:sneakin/view/gmail/GmailPage.dart';
+import 'package:sneakin/view/hi5/Hi5Page.dart';
 import 'package:sneakin/view/instagram/InstagramPage.dart';
 import 'package:sneakin/view/pinterest/PinterestPage.dart';
+import 'package:sneakin/view/sound_cloud/SoundcloudPage.dart';
+import 'package:sneakin/view/tumblr/TumblrPage.dart';
 import 'package:sneakin/view/twitter/TwitterPage.dart';
 import 'package:sneakin/view/youtube/YoutubePage.dart';
 
@@ -37,22 +46,13 @@ final List<dynamic> socialData = <dynamic>[
             title: "Taners", image: Image.asset("assets/images/taners.png")),
         Facebook(
             title: "Taners Ezircans",
-            image: Image.asset("assets/images/taners.png")),
+            image: Image.asset("assets/images/taner_ezircan.png")),
         Facebook(
             title: "TeNeRe TeNeRe",
             image: Image.asset("assets/images/taners.png")),
         Facebook(
-            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Facebook(
-            title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Facebook(
-            title: "Taners Ezircans",
-            image: Image.asset("assets/images/taners.png")),
-        Facebook(
-            title: "TeNeRe TeNeRe",
-            image: Image.asset("assets/images/taners.png")),
-        Facebook(
-            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
+            title: "TnR TnR",
+            image: Image.asset("assets/images/emre_taners.png")),
         Facebook(
             title: "Jineko", image: Image.asset("assets/images/taners.png")),
         Facebook(),
@@ -70,16 +70,6 @@ final List<dynamic> socialData = <dynamic>[
         Twitter(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
         Twitter(
             title: "Taners", image: Image.asset("assets/images/taners.png")),
-        Twitter(
-            title: "Taners Ezircans",
-            image: Image.asset("assets/images/taners.png")),
-        Twitter(
-            title: "TeNeRe TeNeRe",
-            image: Image.asset("assets/images/taners.png")),
-        Twitter(
-            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Twitter(
-            title: "Jineko", image: Image.asset("assets/images/taners.png")),
         Twitter(
             title: "Taners Ezircans",
             image: Image.asset("assets/images/taners.png")),
@@ -115,21 +105,61 @@ final List<dynamic> socialData = <dynamic>[
             title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
         Instagram(
             title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Instagram(
+        Instagram(),
+      ]),
+  LinkedIn(
+      title: "LinkedIn",
+      icon: Image.asset("assets/icons/linkedin.png"),
+      children: <LinkedIn>[
+        LinkedIn(
+            title: "Taner Ezircan",
+            image: Image.asset("assets/images/taner_ezircan.png")),
+        LinkedIn(
+            title: "Emre Taners",
+            image: Image.asset("assets/images/emre_taners.png")),
+        LinkedIn(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+        LinkedIn(
+            title: "Taners", image: Image.asset("assets/images/taners.png")),
+        LinkedIn(
             title: "Taners Ezircans",
             image: Image.asset("assets/images/taners.png")),
-        Instagram(
+        LinkedIn(
             title: "TeNeRe TeNeRe",
             image: Image.asset("assets/images/taners.png")),
-        Instagram(
+        LinkedIn(
             title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Instagram(
+        LinkedIn(
             title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Instagram(),
+        LinkedIn(),
+      ]),
+  Youtube(
+      title: "Youtube",
+      icon: Image.asset("assets/icons/youtube.png"),
+      children: <Youtube>[
+        Youtube(
+            title: "Taner Ezircan",
+            image: Image.asset("assets/images/taner_ezircan.png")),
+        Youtube(
+            title: "Emre Taners",
+            image: Image.asset("assets/images/emre_taners.png")),
+        Youtube(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+        Youtube(
+            title: "Taners", image: Image.asset("assets/images/taners.png")),
+        Youtube(
+            title: "Taners Ezircans",
+            image: Image.asset("assets/images/taners.png")),
+        Youtube(
+            title: "TeNeRe TeNeRe",
+            image: Image.asset("assets/images/taners.png")),
+        Youtube(
+            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
+        Youtube(
+            title: "Jineko", image: Image.asset("assets/images/taners.png")),
+        Youtube(),
       ]),
   Gmail(
       title: "Gmail",
-      icon: Image.asset("assets/icons/youtube.png"),
+      icon: Image.asset("assets/icons/gmail.png"),
       children: <Gmail>[
         Gmail(
             title: "Taner Ezircan",
@@ -157,6 +187,29 @@ final List<dynamic> socialData = <dynamic>[
         Gmail(title: "Jineko", image: Image.asset("assets/images/taners.png")),
         Gmail(),
       ]),
+  Flickr(
+      title: "Flickr",
+      icon: Image.asset("assets/icons/flickr.png"),
+      children: <Flickr>[
+        Flickr(
+            title: "Taner Ezircan",
+            image: Image.asset("assets/images/taner_ezircan.png")),
+        Flickr(
+            title: "Emre Taners",
+            image: Image.asset("assets/images/emre_taners.png")),
+        Flickr(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+        Flickr(title: "Taners", image: Image.asset("assets/images/taners.png")),
+        Flickr(
+            title: "Taners Ezircans",
+            image: Image.asset("assets/images/taners.png")),
+        Flickr(
+            title: "TeNeRe TeNeRe",
+            image: Image.asset("assets/images/taners.png")),
+        Flickr(
+            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
+        Flickr(title: "Jineko", image: Image.asset("assets/images/taners.png")),
+        Flickr(),
+      ]),
   Pinterest(
       title: "Pinterest",
       icon: Image.asset("assets/icons/pinterest.png"),
@@ -180,52 +233,72 @@ final List<dynamic> socialData = <dynamic>[
             title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
         Pinterest(
             title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Pinterest(
-            title: "Taners Ezircans",
-            image: Image.asset("assets/images/taners.png")),
-        Pinterest(
-            title: "TeNeRe TeNeRe",
-            image: Image.asset("assets/images/taners.png")),
-        Pinterest(
-            title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Pinterest(
-            title: "Jineko", image: Image.asset("assets/images/taners.png")),
         Pinterest(),
       ]),
-  Youtube(
-      title: "Youtube",
-      icon: Image.asset("assets/icons/youtube.png"),
-      children: <Youtube>[
-        Youtube(
+  Soundcloud(
+      title: "Soundcloud",
+      icon: Image.asset("assets/icons/soundcloud.png"),
+      children: <Soundcloud>[
+        Soundcloud(
             title: "Taner Ezircan",
             image: Image.asset("assets/images/taner_ezircan.png")),
-        Youtube(
+        Soundcloud(
             title: "Emre Taners",
             image: Image.asset("assets/images/emre_taners.png")),
-        Youtube(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
-        Youtube(
+        Soundcloud(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+        Soundcloud(
             title: "Taners", image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Soundcloud(
             title: "Taners Ezircans",
             image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Soundcloud(
             title: "TeNeRe TeNeRe",
             image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Soundcloud(
             title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Soundcloud(
             title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Soundcloud(),
+      ]),
+  Hi5(title: "Hi5", icon: Image.asset("assets/icons/hi5.png"), children: <Hi5>[
+    Hi5(
+        title: "Taner Ezircan",
+        image: Image.asset("assets/images/taner_ezircan.png")),
+    Hi5(
+        title: "Emre Taners",
+        image: Image.asset("assets/images/emre_taners.png")),
+    Hi5(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+    Hi5(title: "Taners", image: Image.asset("assets/images/taners.png")),
+    Hi5(
+        title: "Taners Ezircans",
+        image: Image.asset("assets/images/taners.png")),
+    Hi5(title: "TeNeRe TeNeRe", image: Image.asset("assets/images/taners.png")),
+    Hi5(title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
+    Hi5(title: "Jineko", image: Image.asset("assets/images/taners.png")),
+    Hi5(),
+  ]),
+  Tumblr(
+      title: "Tumblr",
+      icon: Image.asset("assets/icons/tumblr.png"),
+      children: <Tumblr>[
+        Tumblr(
+            title: "Taner Ezircan",
+            image: Image.asset("assets/images/taner_ezircan.png")),
+        Tumblr(
+            title: "Emre Taners",
+            image: Image.asset("assets/images/emre_taners.png")),
+        Tumblr(title: "Ezgi", image: Image.asset("assets/images/ezgi.png")),
+        Tumblr(title: "Taners", image: Image.asset("assets/images/taners.png")),
+        Tumblr(
             title: "Taners Ezircans",
             image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Tumblr(
             title: "TeNeRe TeNeRe",
             image: Image.asset("assets/images/taners.png")),
-        Youtube(
+        Tumblr(
             title: "TnR TnR", image: Image.asset("assets/images/taners.png")),
-        Youtube(
-            title: "Jineko", image: Image.asset("assets/images/taners.png")),
-        Youtube(),
+        Tumblr(title: "Jineko", image: Image.asset("assets/images/taners.png")),
+        Tumblr(),
       ]),
 ];
 
@@ -274,9 +347,29 @@ class _SocialMediaResultPageState extends State<SocialMediaResultPage> {
                                   ? YoutubePage(socialData[index])
                                   : (socialData[index].title == "Gmail"
                                       ? GmailPage(socialData[index])
-                                      : (socialData[index].title == "Pinterest"
-                                          ? PinterestPage(socialData[index])
-                                          : null))))),
+                                      : (socialData[index].title == "LinkedIn"
+                                          ? LinkedInPage(socialData[index])
+                                          : (socialData[index].title == "Flickr"
+                                              ? FlickrPage(socialData[index])
+                                              : (socialData[index].title ==
+                                                      "Pinterest"
+                                                  ? PinterestPage(
+                                                      socialData[index])
+                                                  : (socialData[index].title ==
+                                                          "Soundcloud"
+                                                      ? SoundcloudPage(
+                                                          socialData[index])
+                                                      : (socialData[index].title ==
+                                                              "Hi5"
+                                                          ? Hi5Page(
+                                                              socialData[index])
+                                                          : (socialData[index]
+                                                                      .title ==
+                                                                  "Tumblr"
+                                                              ? TumblrPage(
+                                                                  socialData[
+                                                                      index])
+                                                              : null)))))))))),
                 ),
               );
             },
