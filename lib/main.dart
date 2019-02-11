@@ -3,7 +3,6 @@ import 'package:sneakin/view/facebook/FacebookDetailPage.dart';
 import 'package:sneakin/view/home/SneakHomePage.dart';
 import 'package:sneakin/view/home/SneakSideMenuPage.dart';
 import 'package:sneakin/view/home/SocialMediaResultPage.dart';
-import 'package:sneakin/view/twitter/TwitterPage.dart';
 
 void main() => runApp(SneakInApplication());
 
@@ -20,7 +19,7 @@ class SneakInApplication extends StatelessWidget {
         "/socialMediaResult": (context) => SocialMediaResultPage(),
         "/facebook": (context) => SneakHomePage(),
         "/facebookDetail": (context) => FacebookDetailPage(),
-        "/twitter": (context) => TwitterPage(),
+        "/twitter": (context) => SneakHomePage(),
         "/instagram": (context) => SneakHomePage(),
         "/linkedIn": (context) => SneakHomePage(),
         "/youtube": (context) => SneakHomePage(),

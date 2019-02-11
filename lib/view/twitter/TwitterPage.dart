@@ -1,38 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:sneakin/model/Twitter.dart';
 
-class TwitterPage extends StatefulWidget {
-  final String nameSurname;
+class TwitterPage extends StatelessWidget {
+  const TwitterPage(this.twitter);
+  final Twitter twitter;
 
-  TwitterPage([this.nameSurname]);
-
-  @override
-  _TwitterPageState createState() => _TwitterPageState(nameSurname);
-  
-}
-
-class _TwitterPageState extends State<TwitterPage> {
-  final String nameSurname;
-
-  _TwitterPageState(this.nameSurname);
+  Widget _buildTwitter(BuildContext context, Twitter root) {
+    // parent widget
+    if (root.children.isNotEmpty)
+      return Container(
+        color: ThemeData.light().canvasColor,
+        child: ExpansionTile(
+          trailing: Text("Detail"),
+          leading: root.icon,
+          key: PageStorageKey<Twitter>(root),
+          title: Center(
+              child: Text(
+            root.title,
+            style: TextStyle(
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
+                shadows: [
+                  BoxShadow(color: Colors.amber),
+                  BoxShadow(color: Colors.red),
+                  BoxShadow(color: Colors.green)
+                ]),
+          )),
+          children: root.children
+              .map((twitter) => _buildTwitter(context, twitter))
+              .toList(),
+        ),
+      );
+    // child widget
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, "/twitterDetail"),
+      child: Column(
+        children: <Widget>[
+          Divider(),
+          ListTile(
+            trailing: Text("Detail"),
+            leading: root.image,
+            title: Center(
+                child: Text(
+              root.title,
+              style: TextStyle(
+                  fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+              overflow: TextOverflow.clip,
+            )),
+            subtitle: Center(
+                child: Text(
+              root.title,
+              style: TextStyle(
+                  fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+            )),
+            isThreeLine: false, // listede aralarda bosluk olmasi icin
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Center(child: Text('$nameSurname on Twitter'))),
-      body: Container(
-        child: ListView(
-          children: <Widget>[
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Center(
-                  child: Text(
-                "welcome to twitter page",
-                textDirection: TextDirection.ltr,
-              )),
-            )
-          ],
-        ),
-      ),
-    );
+    return _buildTwitter(context, twitter);
   }
 }

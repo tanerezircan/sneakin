@@ -11,39 +11,46 @@ class FacebookPage extends StatelessWidget {
       return Container(
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
-          trailing: Text("expansion tile"),
-          leading: Image.asset("assets/icons/facebook.png"),
+          trailing: Text("Detail"),
+          leading: root.icon,
           key: PageStorageKey<Facebook>(root),
           title: Center(
               child: Text(
             root.title,
+            
             style: TextStyle(
-                fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
+                shadows: [
+                  BoxShadow(color: Colors.amber),
+                  BoxShadow(color: Colors.red),
+                  BoxShadow(color: Colors.green)
+                ]),
           )),
           children: root.children
               .map((facebook) => _buildFacebook(context, facebook))
               .toList(),
         ),
       );
-      // child widget
+    // child widget
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, "/facebookDetail"),
       child: Column(
         children: <Widget>[
           Divider(),
           ListTile(
-            trailing: Text("trailing"),
-            leading: Image.asset("assets/images/aglak.png"),
+            trailing: Text("Detail"),
+            leading: root.image,
             title: Center(
                 child: Text(
-              root.getTitle,
+              root.title,
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
               overflow: TextOverflow.clip,
             )),
             subtitle: Center(
                 child: Text(
-              root.getTitle,
+              root.title,
               style: TextStyle(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
             )),
