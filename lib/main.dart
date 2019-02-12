@@ -26,7 +26,6 @@ class SneakInApplication extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/sneakSideMenu": (context) => SneakSideMenuPage(),
-        "/socialMediaResult": (context) => SocialMediaResultPage(),
         "/facebookDetail": (context) => FacebookDetailPage(),
         "/twitterDetail": (context) => TwitterDetailPage(),
         "/instagramDetail": (context) => InstagramDetailPage(),

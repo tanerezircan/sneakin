@@ -41,6 +41,7 @@ class Facebook implements IEntity<Facebook> {
       this.age,
       this.children = const <Facebook>[]})
       : assert(title != null),
+        assert(age == null || age != null),
         assert(children != null);
 
   @override
