@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Tumblr.dart';
+import 'package:sneakin/view/tumblr/TumblrDetailPage.dart';
 
 class TumblrPage extends StatelessWidget {
   const TumblrPage(this.tumblr);
@@ -34,7 +35,7 @@ class TumblrPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/tumblrDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class TumblrPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildTumblr(context, tumblr);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Tumblr person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => TumblrDetailPage(person: person)));
   }
 }

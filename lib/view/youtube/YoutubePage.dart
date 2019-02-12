@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Youtube.dart';
+import 'package:sneakin/view/youtube/YoutubeDetailPage.dart';
 
 class YoutubePage extends StatelessWidget {
   const YoutubePage(this.youtube);
@@ -34,7 +35,7 @@ class YoutubePage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/youtubeDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class YoutubePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildYoutube(context, youtube);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Youtube person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => YoutubeDetailPage(person: person)));
   }
 }

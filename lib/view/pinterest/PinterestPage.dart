@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Pinterest.dart';
+import 'package:sneakin/view/pinterest/PinterestDetailPage.dart';
 
 class PinterestPage extends StatelessWidget {
   const PinterestPage(this.pinterest);
@@ -34,7 +35,7 @@ class PinterestPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/pinterestDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class PinterestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildPinterest(context, pinterest);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Pinterest person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => PinterestDetailPage(person: person)));
   }
 }

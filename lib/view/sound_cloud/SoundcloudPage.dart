@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Soundcloud.dart';
+import 'package:sneakin/view/sound_cloud/SoundcloudDetailPage.dart';
 
 class SoundcloudPage extends StatelessWidget {
   const SoundcloudPage(this.soundcloud);
@@ -17,7 +18,6 @@ class SoundcloudPage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ class SoundcloudPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/soundcloudDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +64,13 @@ class SoundcloudPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildSoundcloud(context, soundcloud);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Soundcloud person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => SoundcloudDetailPage(person: person)));
   }
 }

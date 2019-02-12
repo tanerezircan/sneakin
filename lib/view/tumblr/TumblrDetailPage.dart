@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/Tumblr.dart';
 
 class TumblrDetailPage extends StatefulWidget {
-  final Tumblr tumblr;
+  final Tumblr person;
 
-  const TumblrDetailPage({Key key, this.tumblr}) : super(key: key);
+  const TumblrDetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => TumblrDetailPageState(tumblr);
+  State<StatefulWidget> createState() => TumblrDetailPageState(person);
 }
 
 class TumblrDetailPageState extends State<TumblrDetailPage> {
-  final Tumblr tumblr;
+  final Tumblr person;
 
-  TumblrDetailPageState(this.tumblr);
+  TumblrDetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Tumblr"),
+        title: Text("${person.title} on Tumblr"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class TumblrDetailPageState extends State<TumblrDetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

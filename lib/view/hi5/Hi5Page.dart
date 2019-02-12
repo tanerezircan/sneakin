@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Hi5.dart';
+import 'package:sneakin/view/hi5/Hi5DetailPage.dart';
 
 class Hi5Page extends StatelessWidget {
   const Hi5Page(this.hi5);
@@ -17,7 +18,6 @@ class Hi5Page extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
@@ -27,14 +27,13 @@ class Hi5Page extends StatelessWidget {
                   BoxShadow(color: Colors.green)
                 ]),
           )),
-          children: root.children
-              .map((hi5) => _buildHi5(context, hi5))
-              .toList(),
+          children:
+              root.children.map((hi5) => _buildHi5(context, hi5)).toList(),
         ),
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/hi5Detail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +63,11 @@ class Hi5Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildHi5(context, hi5);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Hi5 person) async {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => Hi5DetailPage(person: person)));
   }
 }

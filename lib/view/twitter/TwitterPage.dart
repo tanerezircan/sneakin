@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Twitter.dart';
+import 'package:sneakin/view/twitter/TwitterDetailPage.dart';
 
 class TwitterPage extends StatelessWidget {
   const TwitterPage(this.twitter);
@@ -34,7 +35,7 @@ class TwitterPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/twitterDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class TwitterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildTwitter(context, twitter);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Twitter person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => TwitterDetailPage(person: person)));
   }
 }

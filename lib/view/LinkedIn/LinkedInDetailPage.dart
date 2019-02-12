@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/LinkedIn.dart';
 
 class LinkedInDetailPage extends StatefulWidget {
-  final LinkedIn linkedIn;
+  final LinkedIn person;
 
-  const LinkedInDetailPage({Key key, this.linkedIn}) : super(key: key);
+  const LinkedInDetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => LinkedInDetailPageState(linkedIn);
+  State<StatefulWidget> createState() => LinkedInDetailPageState(person);
 }
 
 class LinkedInDetailPageState extends State<LinkedInDetailPage> {
-  final LinkedIn linkedIn;
+  final LinkedIn person;
 
-  LinkedInDetailPageState(this.linkedIn);
+  LinkedInDetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on LinkedIn"),
+        title: Text("${person.title} on LinkedIn"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class LinkedInDetailPageState extends State<LinkedInDetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/Pinterest.dart';
 
 class PinterestDetailPage extends StatefulWidget {
-  final Pinterest pinterest;
+  final Pinterest person;
 
-  const PinterestDetailPage({Key key, this.pinterest}) : super(key: key);
+  const PinterestDetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => PinterestDetailPageState(pinterest);
+  State<StatefulWidget> createState() => PinterestDetailPageState(person);
 }
 
 class PinterestDetailPageState extends State<PinterestDetailPage> {
-  final Pinterest pinterest;
+  final Pinterest person;
 
-  PinterestDetailPageState(this.pinterest);
+  PinterestDetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Pinterest"),
+        title: Text("${person.title} on Pinterest"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class PinterestDetailPageState extends State<PinterestDetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

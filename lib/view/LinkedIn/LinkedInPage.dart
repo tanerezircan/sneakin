@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/LinkedIn.dart';
+import 'package:sneakin/view/LinkedIn/LinkedInDetailPage.dart';
 
 class LinkedInPage extends StatelessWidget {
   const LinkedInPage(this.linkedIn);
@@ -34,7 +35,7 @@ class LinkedInPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/linkedInDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class LinkedInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildLinkedIn(context, linkedIn);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, LinkedIn person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => LinkedInDetailPage(person: person)));
   }
 }

@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/Twitter.dart';
 
 class TwitterDetailPage extends StatefulWidget {
-  final Twitter twitter;
+  final Twitter person;
 
-  const TwitterDetailPage({Key key, this.twitter}) : super(key: key);
+  const TwitterDetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => TwitterDetailPageState(twitter);
+  State<StatefulWidget> createState() => TwitterDetailPageState(person);
 }
 
 class TwitterDetailPageState extends State<TwitterDetailPage> {
-  final Twitter twitter;
+  final Twitter person;
 
-  TwitterDetailPageState(this.twitter);
+  TwitterDetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Twitter"),
+        title: Text("${person.title} on Twitter"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class TwitterDetailPageState extends State<TwitterDetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

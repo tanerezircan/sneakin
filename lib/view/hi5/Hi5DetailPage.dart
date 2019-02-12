@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/Hi5.dart';
 
 class Hi5DetailPage extends StatefulWidget {
-  final Hi5 hi5;
+  final Hi5 person;
 
-  const Hi5DetailPage({Key key, this.hi5}) : super(key: key);
+  const Hi5DetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => Hi5DetailPageState(hi5);
+  State<StatefulWidget> createState() => Hi5DetailPageState(person);
 }
 
 class Hi5DetailPageState extends State<Hi5DetailPage> {
-  final Hi5 hi5;
+  final Hi5 person;
 
-  Hi5DetailPageState(this.hi5);
+  Hi5DetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Hi5"),
+        title: Text("${person.title} on Hi5"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class Hi5DetailPageState extends State<Hi5DetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

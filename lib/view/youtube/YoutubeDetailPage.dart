@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:sneakin/model/Youtube.dart';
 
 class YoutubeDetailPage extends StatefulWidget {
-  final Youtube youtube;
+  final Youtube person;
 
-  const YoutubeDetailPage({Key key, this.youtube}) : super(key: key);
+  const YoutubeDetailPage({Key key, this.person}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => YoutubeDetailPageState(youtube);
+  State<StatefulWidget> createState() => YoutubeDetailPageState(person);
 }
 
 class YoutubeDetailPageState extends State<YoutubeDetailPage> {
-  final Youtube youtube;
+  final Youtube person;
 
-  YoutubeDetailPageState(this.youtube);
+  YoutubeDetailPageState(this.person);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TeNeRe on Youtube"),
+        title: Text("${person.title} on Youtube"),
       ),
       body: Container(
         padding: EdgeInsets.all(5.0),
@@ -34,7 +34,7 @@ class YoutubeDetailPageState extends State<YoutubeDetailPage> {
                 alignment: Alignment.topCenter,
                 margin: EdgeInsets.all(15.0),
                 padding: EdgeInsets.only(top: 15.0),
-                child: Image.asset("assets/images/aglak.png"),
+                child: person.image,
               ),
             ],
           ),

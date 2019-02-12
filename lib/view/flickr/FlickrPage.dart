@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Flickr.dart';
+import 'package:sneakin/view/flickr/FlickrDetailPage.dart';
 
 class FlickrPage extends StatelessWidget {
   const FlickrPage(this.flickr);
@@ -34,7 +35,7 @@ class FlickrPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/flickrDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class FlickrPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildFlickr(context, flickr);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Flickr person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => FlickrDetailPage(person: person)));
   }
 }

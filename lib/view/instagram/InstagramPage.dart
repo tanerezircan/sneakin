@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Instagram.dart';
+import 'package:sneakin/view/instagram/InstagramDetailPage.dart';
 
 class InstagramPage extends StatelessWidget {
   const InstagramPage(this.instagram);
@@ -34,7 +35,7 @@ class InstagramPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/instagramDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class InstagramPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildInstagram(context, instagram);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Instagram person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => InstagramDetailPage(person: person)));
   }
 }

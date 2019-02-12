@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Gmail.dart';
+import 'package:sneakin/view/gmail/GmailDetailPage.dart';
 
 class GmailPage extends StatelessWidget {
   const GmailPage(this.gmail);
@@ -33,7 +34,7 @@ class GmailPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/gmailDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -63,5 +64,13 @@ class GmailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildGmail(context, gmail);
+  }
+
+  // Navigate to Detail Page
+  void gotoDetail(BuildContext context, Gmail person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => GmailDetailPage(person: person)));
   }
 }

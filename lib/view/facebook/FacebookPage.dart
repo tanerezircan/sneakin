@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Facebook.dart';
+import 'package:sneakin/view/facebook/FacebookDetailPage.dart';
 
 class FacebookPage extends StatelessWidget {
   const FacebookPage(this.facebook);
@@ -34,7 +35,7 @@ class FacebookPage extends StatelessWidget {
       );
     // child widget
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/facebookDetail"),
+      onTap: () => gotoDetail(context, root),
       child: Column(
         children: <Widget>[
           Divider(),
@@ -64,5 +65,13 @@ class FacebookPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _buildFacebook(context, facebook);
+  }
+
+// Navigate to Detail Page
+  void gotoDetail(BuildContext context, Facebook person) async {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => FacebookDetailPage(person: person)));
   }
 }
