@@ -17,8 +17,8 @@ class InstagramPage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Color.fromRGBO(35, 31, 32, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

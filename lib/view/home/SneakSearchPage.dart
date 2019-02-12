@@ -10,8 +10,6 @@ searchPeople(BuildContext context, [String name, String surname]) {
     print("İsim veya Soyisimden en az biri dolu olmalıdır!");
     return;
   }
-
-  print("name: $name, surname: $surname");
   Navigator.pushNamed(context, "/socialMediaResult");
 /*
   TwitterService twitterService = new TwitterService();
@@ -53,7 +51,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
         children: <Widget>[
           Container(
             // color: Colors.lightBlue[50],
-            padding: EdgeInsets.only(top: 40.0),
+            padding: EdgeInsets.only(top: 20.0),
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -72,10 +70,15 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
               textDirection: TextDirection.ltr,
             ),
           ),
+          Center(
+              child: Container(
+                height: 150.0,
+                width: double.infinity,
+                  child: Image.asset("assets/icons/search_people.png", fit: BoxFit.cover,))),
           Expanded(
             child: Container(
               alignment: Alignment.topCenter,
-              padding: EdgeInsets.only(top: 80.0, left: 30.0),
+              padding: EdgeInsets.only(top: 5.0, left: 30.0),
               // color: Colors.lightBlue[50],
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

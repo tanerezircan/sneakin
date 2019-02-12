@@ -17,8 +17,8 @@ class PinterestPage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Color.fromRGBO(189, 8, 28, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

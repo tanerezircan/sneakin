@@ -17,8 +17,8 @@ class FacebookPage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Color.fromRGBO(66, 103, 178, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

@@ -18,6 +18,7 @@ class TwitterPage extends StatelessWidget {
               child: Text(
             root.title,
             style: TextStyle(
+                color: Color.fromRGBO(56, 161, 243, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

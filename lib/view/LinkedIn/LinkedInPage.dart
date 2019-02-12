@@ -17,8 +17,8 @@ class LinkedInPage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Color.fromRGBO(0, 119, 181, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

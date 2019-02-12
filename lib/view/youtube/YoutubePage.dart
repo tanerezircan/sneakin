@@ -17,8 +17,8 @@ class YoutubePage extends StatelessWidget {
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Color.fromRGBO(237, 56, 51, 1.0),
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
