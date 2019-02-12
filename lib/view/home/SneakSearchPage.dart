@@ -11,7 +11,11 @@ import 'package:sneakin/model/Soundcloud.dart';
 import 'package:sneakin/model/Tumblr.dart';
 import 'package:sneakin/model/Twitter.dart';
 import 'package:sneakin/model/Youtube.dart';
+import 'package:sneakin/utility/util/SneakUtil.dart';
+import 'package:sneakin/view/facebook/FacebookPage.dart';
 import 'package:sneakin/view/home/SocialMediaResultPage.dart';
+import 'package:sneakin/view/instagram/InstagramPage.dart';
+import 'package:sneakin/view/twitter/TwitterPage.dart';
 
 class SneakSearchPage extends StatefulWidget {
   @override
@@ -28,169 +32,173 @@ searchPeople(BuildContext context, [String name, String surname]) {
   } else {
     // TODO: async method should call and passing to result page via parameter
 
-    final List<dynamic> socialData = <dynamic>[
-      Facebook(
-          title: "Facebook",
-          icon: Image.asset("assets/icons/facebook.png"),
-          children: <Facebook>[
-            Facebook(
-                title: "Taner Ezircan",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taner_ezircan.png")),
-            Facebook(
-                title: "Emre Taners",
-                age: 26,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/emre_taners",
-                image: Image.asset("assets/images/emre_taners.png")),
-            Facebook(
-                title: "Ezgi",
-                age: 28,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/ezgi",
-                image: Image.asset("assets/images/ezgi.png")),
-            Facebook(
-                title: "Taners",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taners",
-                image: Image.asset("assets/images/taners.png")),
-            Facebook(
-                title: "Taners Ezircans",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taners.ezircans",
-                image: Image.asset("assets/images/taner_ezircan.png")),
-            Facebook(
-                title: "TeNeRe TeNeRe",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/tenere.tenere",
-                image: Image.asset("assets/images/taners.png")),
-            Facebook(
-                title: "TnR TnR",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/tnr.tnr",
-                image: Image.asset("assets/images/taner_ezircan.png")),
-            Facebook(
-                title: "Emre Fikirlier",
-                age: 26,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/emre.fikirlier",
-                image: Image.asset("assets/images/emre_taners.png")),
-            Facebook(),
-          ]),
-      Twitter(
-          title: "Twitter",
-          icon: Image.asset("assets/icons/twitter.png"),
-          children: <Twitter>[
-            Twitter(
-                title: "Taner Ezircan",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taner_ezircan.png")),
-            Twitter(
-                title: "Emre Taners",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/emre_taners.png")),
-            Twitter(
-                title: "Ezgi",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/ezgi.png")),
-            Twitter(
-                title: "Taners",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Twitter(
-                title: "Taners Ezircans",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Twitter(
-                title: "TeNeRe TeNeRe",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Twitter(
-                title: "TnR TnR",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Twitter(
-                title: "Jineko",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Twitter(),
-          ]),
-      Instagram(
-          title: "Instagram",
-          icon: Image.asset("assets/icons/instagram.png"),
-          children: <Instagram>[
-            Instagram(
-                title: "Taner Ezircan",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taner_ezircan.png")),
-            Instagram(
-                title: "Emre Taners",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/emre_taners.png")),
-            Instagram(
-                title: "Ezgi",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/ezgi.png")),
-            Instagram(
-                title: "Taners",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Instagram(
-                title: "Taners Ezircans",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Instagram(
-                title: "TeNeRe TeNeRe",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Instagram(
-                title: "TnR TnR",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Instagram(
-                title: "Jineko",
-                age: 29,
-                address: Address(street: "Kentucky"),
-                linkId: "www.facebook.com/taner.ezircan",
-                image: Image.asset("assets/images/taners.png")),
-            Instagram(),
-          ]),
+    final socialDataFacebook = Facebook(
+        title: "Facebook",
+        icon: Image.asset("assets/icons/facebook.png"),
+        children: <Facebook>[
+          Facebook(
+              title: "Taner Ezircan",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taner_ezircan.png")),
+          Facebook(
+              title: "Emre Taners",
+              age: 26,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/emre_taners",
+              image: Image.asset("assets/images/emre_taners.png")),
+          Facebook(
+              title: "Ezgi",
+              age: 28,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/ezgi",
+              image: Image.asset("assets/images/ezgi.png")),
+          Facebook(
+              title: "Taners",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taners",
+              image: Image.asset("assets/images/taners.png")),
+          Facebook(
+              title: "Taners Ezircans",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taners.ezircans",
+              image: Image.asset("assets/images/taner_ezircan.png")),
+          Facebook(
+              title: "TeNeRe TeNeRe",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/tenere.tenere",
+              image: Image.asset("assets/images/taners.png")),
+          Facebook(
+              title: "TnR TnR",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/tnr.tnr",
+              image: Image.asset("assets/images/taner_ezircan.png")),
+          Facebook(
+              title: "Emre Fikirlier",
+              age: 26,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/emre.fikirlier",
+              image: Image.asset("assets/images/emre_taners.png")),
+          Facebook(),
+        ]);
+
+    final socialDataTwitter = Twitter(
+        title: "Twitter",
+        icon: Image.asset("assets/icons/twitter.png"),
+        children: <Twitter>[
+          Twitter(
+              title: "Taner Ezircan",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taner_ezircan.png")),
+          Twitter(
+              title: "Emre Taners",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/emre_taners.png")),
+          Twitter(
+              title: "Ezgi",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/ezgi.png")),
+          Twitter(
+              title: "Taners",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Twitter(
+              title: "Taners Ezircans",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Twitter(
+              title: "TeNeRe TeNeRe",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Twitter(
+              title: "TnR TnR",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Twitter(
+              title: "Jineko",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Twitter(),
+        ]);
+
+    final socialDataInstagram = Instagram(
+        title: "Instagram",
+        icon: Image.asset("assets/icons/instagram.png"),
+        children: <Instagram>[
+          Instagram(
+              title: "Taner Ezircan",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taner_ezircan.png")),
+          Instagram(
+              title: "Emre Taners",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/emre_taners.png")),
+          Instagram(
+              title: "Ezgi",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/ezgi.png")),
+          Instagram(
+              title: "Taners",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Instagram(
+              title: "Taners Ezircans",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Instagram(
+              title: "TeNeRe TeNeRe",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Instagram(
+              title: "TnR TnR",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Instagram(
+              title: "Jineko",
+              age: 29,
+              address: Address(street: "Kentucky"),
+              linkId: "www.facebook.com/taner.ezircan",
+              image: Image.asset("assets/images/taners.png")),
+          Instagram(),
+        ]);
+
+    List<dynamic> socialData = <dynamic>[
+      /*
       LinkedIn(
           title: "LinkedIn",
           icon: Image.asset("assets/icons/linkedin.png"),
@@ -646,8 +654,23 @@ searchPeople(BuildContext context, [String name, String surname]) {
                 linkId: "www.facebook.com/taner.ezircan",
                 image: Image.asset("assets/images/taners.png")),
             Tumblr(),
-          ]),
+          ]), */
     ];
+
+    if (socialData != null || socialData.isNotEmpty)
+      socialData.clear();
+    else
+      socialData = new List<dynamic>();
+
+    socialData.add(socialDataFacebook);
+    SneakUtil.fillModelPageMap(
+        socialDataFacebook, FacebookPage(socialDataFacebook));
+    socialData.add(socialDataTwitter);
+    SneakUtil.fillModelPageMap(
+        socialDataTwitter, TwitterPage(socialDataTwitter));
+    socialData.add(socialDataInstagram);
+    SneakUtil.fillModelPageMap(
+        socialDataInstagram, InstagramPage(socialDataInstagram));
 
     Navigator.push(context,
         MaterialPageRoute(builder: (_) => SocialMediaResultPage(socialData)));

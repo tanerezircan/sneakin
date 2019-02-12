@@ -6,7 +6,6 @@ import 'package:sneakin/view/gmail/GmailDetailPage.dart';
 import 'package:sneakin/view/hi5/Hi5DetailPage.dart';
 import 'package:sneakin/view/home/SneakHomePage.dart';
 import 'package:sneakin/view/home/SneakSideMenuPage.dart';
-import 'package:sneakin/view/home/SocialMediaResultPage.dart';
 import 'package:sneakin/view/instagram/InstagramDetailPage.dart';
 import 'package:sneakin/view/pinterest/PinterestDetailPage.dart';
 import 'package:sneakin/view/sound_cloud/SoundcloudDetailPage.dart';
