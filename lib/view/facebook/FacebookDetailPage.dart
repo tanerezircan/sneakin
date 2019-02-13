@@ -137,22 +137,23 @@ class FacebookDetailPageState extends State<FacebookDetailPage>
                 children: <Widget>[
                   Text(
                     this.person.title,
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
+                    style: TextStyle(fontSize: 16.0, color: Colors.black, fontStyle: FontStyle.italic),
+                    
                     overflow: TextOverflow.clip,
                   ),
                   Text(
                     this.person.title,
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
+                    style: TextStyle(fontSize: 16.0, color: Colors.black, fontStyle: FontStyle.italic),
                     overflow: TextOverflow.clip,
                   ),
                   Text(
                     "${person.age}",
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
+                    style: TextStyle(fontSize: 16.0, color: Colors.black, fontStyle: FontStyle.italic),
                     overflow: TextOverflow.clip,
                   ),
                   Text(
                     this.person.address.street,
-                    style: TextStyle(fontSize: 16.0, color: Colors.black),
+                    style: TextStyle(fontSize: 16.0, color: Colors.black, fontStyle: FontStyle.italic),
                     overflow: TextOverflow.clip,
                   ),
                 ],
@@ -171,10 +172,10 @@ class FacebookDetailPageState extends State<FacebookDetailPage>
                         style: TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.blue),
+                            color: Colors.blue, fontStyle: FontStyle.italic),
                         overflow: TextOverflow.clip,
                       ),
-                      onPressed: () => _openLinkViaLancher(this.person.linkId),
+                      onPressed: () => _openLinkViaLauncher(this.person.linkId),
                     )
                   ]),
             ],
@@ -184,7 +185,7 @@ class FacebookDetailPageState extends State<FacebookDetailPage>
     );
   }
 
-  _openLinkViaLancher(String linkId) async {
+  _openLinkViaLauncher(String linkId) async {
     if (await canLaunch(linkId)) {
       await launch(linkId);
     } else {
