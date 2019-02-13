@@ -52,98 +52,130 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Container(
-            // color: Colors.lightBlue[50],
-            padding: EdgeInsets.only(top: 20.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                    child: Center(
-                  child: Text(
-                    "Search People",
-                    textDirection: TextDirection.ltr,
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )),
-              ],
-              textDirection: TextDirection.ltr,
-            ),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          centerTitle: true,
+          iconTheme:
+              IconThemeData(color: Theme.of(context).scaffoldBackgroundColor),
+          title: Text(
+            'Sneak In',
+            style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
+            fontSize: 25.0,
+            fontFamily: 'Arial'),
           ),
-          Center(
-              child: Container(
-                  height: 150.0,
-                  width: double.infinity,
-                  child: Image.asset(
-                    "assets/icons/search_people.png",
-                    fit: BoxFit.cover,
-                  ))),
-          Expanded(
-            child: Container(
-              alignment: Alignment.topCenter,
-              padding: EdgeInsets.only(top: 5.0, left: 30.0),
-              // color: Colors.lightBlue[50],
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          snap: true,
+          floating: true,
+        ),
+        SliverList(
+          delegate:
+              SliverChildBuilderDelegate((BuildContext context, int index) {
+            return GestureDetector(
+              child: Stack(
                 children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 5.0),
-                      child: TextField(
-                        maxLength: 20,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            decoration: TextDecoration.none,
-                            color: Colors.black),
-                        controller: nameController,
-                        key: nameGlobalController,
-                        textDirection: TextDirection.ltr,
-                        decoration: InputDecoration(labelText: "Name"),
-                        keyboardType: TextInputType.text,
-                      ),
+                  Container(
+                    padding: EdgeInsets.only(top: 200.0, left: 30.0),
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.only(top: 40.0, left: 5.0),
+                            child: TextField(
+                              maxLength: 20,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  decoration: TextDecoration.none,
+                                  color: Colors.black),
+                              controller: nameController,
+                              key: nameGlobalController,
+                              textDirection: TextDirection.ltr,
+                              decoration: InputDecoration(labelText: "Name"),
+                              keyboardType: TextInputType.text,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.only(top: 40.0, left: 5.0),
+                            child: TextField(
+                              maxLength: 20,
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                              ),
+                              controller: surnameController,
+                              key: surnameGlobalController,
+                              textDirection: TextDirection.ltr,
+                              decoration: InputDecoration(labelText: "Surname"),
+                              keyboardType: TextInputType.text,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 40.0),
+                          child: IconButton(
+                            icon: Icon(Icons.search),
+                            tooltip: 'Search',
+                            onPressed: () {
+                              searchPeople(context, nameController.text,
+                                  surnameController.text);
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      padding: EdgeInsets.only(left: 5.0),
-                      child: TextField(
-                        maxLength: 20,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            color: Colors.black,
-                            decoration: TextDecoration.none),
-                        controller: surnameController,
-                        key: surnameGlobalController,
-                        textDirection: TextDirection.ltr,
-                        decoration: InputDecoration(labelText: "Surname"),
-                        keyboardType: TextInputType.text,
-                      ),
+                  Container(
+                    padding: EdgeInsets.only(top: 50.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                            constraints: BoxConstraints(
+                                maxHeight: 200.0, maxWidth: double.infinity),
+                            child: Center(
+                              child: Image.asset(
+                                "assets/icons/search_people.png",
+                              ),
+                            )),
+                      ],
                     ),
                   ),
-                  IconButton(
-                    icon: Icon(Icons.search),
-                    tooltip: 'Search',
-                    onPressed: () {
-                      searchPeople(
-                          context, nameController.text, surnameController.text);
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            child: Center(
+                              child: Text(
+                                "Search People",
+                                textDirection: TextDirection.ltr,
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
-                textDirection: TextDirection.ltr,
               ),
-            ),
-          ),
-        ],
-      ),
+            );
+          }, childCount: 1),
+        ),
+      ],
     );
   }
 
@@ -842,7 +874,8 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
     }
   }); */
   }
-/// Show page loading indicator
+
+  /// Show page loading indicator
   showPageLoading(BuildContext context) {
     var loadingIndicator = new Center(child: CircularProgressIndicator());
     showDialog(

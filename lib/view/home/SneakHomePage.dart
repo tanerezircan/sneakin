@@ -11,8 +11,8 @@ class _SneakHomePageState extends State<SneakHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text('Sneak In' , style: TextStyle(
-              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, fontFamily: 'Comic-Sans'),))),
+    /*  appBar: AppBar(title: Center(child: Text('Sneak In' , style: TextStyle(
+              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold, fontFamily: 'Comic-Sans'),))),*/
       drawer: SneakSideMenuPage(),
       body: SneakSearchPage(),
     );
