@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Gmail.dart';
 import 'package:sneakin/view/gmail/GmailDetailPage.dart';
 
@@ -13,12 +14,14 @@ class GmailPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(MdiIcons.gmail,
+              size: 32.0, color: Color.fromRGBO(234, 67, 53, 1)),
           key: PageStorageKey<Gmail>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
+                color: Colors.black87,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

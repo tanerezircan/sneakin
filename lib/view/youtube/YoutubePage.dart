@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Youtube.dart';
 import 'package:sneakin/view/youtube/YoutubeDetailPage.dart';
 
@@ -13,13 +14,17 @@ class YoutubePage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.youtube,
+            size: 32.0,
+            color: Color.fromRGBO(205, 32, 31, 1),
+          ),
           key: PageStorageKey<Youtube>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
-                color: Color.fromRGBO(237, 56, 51, 1.0),
+                color: Colors.blueAccent,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

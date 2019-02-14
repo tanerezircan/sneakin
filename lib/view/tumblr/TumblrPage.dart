@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Tumblr.dart';
 import 'package:sneakin/view/tumblr/TumblrDetailPage.dart';
 
@@ -13,13 +14,17 @@ class TumblrPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.tumblr,
+            size: 32.0,
+            color: Color.fromRGBO(53, 70, 92, 1),
+          ),
           key: PageStorageKey<Tumblr>(root),
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Colors.black87,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Pinterest.dart';
 import 'package:sneakin/view/pinterest/PinterestDetailPage.dart';
 
@@ -13,13 +14,17 @@ class PinterestPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.pinterest,
+            size: 32.0,
+            color: Color.fromRGBO(189, 8, 28, 1),
+          ),
           key: PageStorageKey<Pinterest>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
-                color: Color.fromRGBO(189, 8, 28, 1.0),
+                color: Colors.black87,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

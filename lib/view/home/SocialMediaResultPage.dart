@@ -50,7 +50,7 @@ class _SocialMediaResultPageState extends State<SocialMediaResultPage> {
               return Container(
                 padding: EdgeInsets.only(top: 2.0),
                 child: Card(
-                  elevation: 30.0,
+                  elevation: 60.0,
                   margin: EdgeInsets.all(1.0),
                   child: (resultList != null && resultList.length > 0)
                       ? SneakUtil.getPageFromModelMap(

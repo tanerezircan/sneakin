@@ -706,6 +706,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
               Soundcloud(),
             ]);
 
+/*
         final socialDataHi5 = Hi5(
             title: "Hi5",
             age: 29,
@@ -763,6 +764,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   image: Image.asset("assets/images/taners.png")),
               Hi5(),
             ]);
+            */
 
         final socialDataTumblr = Tumblr(
             title: "Tumblr",
@@ -829,7 +831,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
           socialDataFlickr,
           socialDataPinterest,
           socialDataSoundcloud,
-          socialDataHi5,
+        //  socialDataHi5,
           socialDataTumblr
         ];
 
@@ -850,7 +852,7 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
             socialDataPinterest, PinterestPage(socialDataPinterest));
         SneakUtil.fillModelPageMap(
             socialDataSoundcloud, SoundcloudPage(socialDataSoundcloud));
-        SneakUtil.fillModelPageMap(socialDataHi5, Hi5Page(socialDataHi5));
+   //     SneakUtil.fillModelPageMap(socialDataHi5, Hi5Page(socialDataHi5));
         SneakUtil.fillModelPageMap(
             socialDataTumblr, TumblrPage(socialDataTumblr));
 

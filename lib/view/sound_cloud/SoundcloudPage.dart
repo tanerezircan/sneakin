@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Soundcloud.dart';
 import 'package:sneakin/view/sound_cloud/SoundcloudDetailPage.dart';
 
@@ -13,12 +14,17 @@ class SoundcloudPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.soundcloud,
+            size: 32.0,
+            color: Color.fromRGBO(255, 85, 0, 1),
+          ),
           key: PageStorageKey<Soundcloud>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
+                color: Colors.blueAccent,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

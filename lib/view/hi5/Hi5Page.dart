@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Hi5.dart';
 import 'package:sneakin/view/hi5/Hi5DetailPage.dart';
 
@@ -13,12 +14,13 @@ class Hi5Page extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(MdiIcons.hinduism),
           key: PageStorageKey<Hi5>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
+                color: Colors.blueAccent,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

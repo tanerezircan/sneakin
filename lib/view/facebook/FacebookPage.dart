@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sneakin/model/Facebook.dart';
 import 'package:sneakin/view/facebook/FacebookDetailPage.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class FacebookPage extends StatelessWidget {
   const FacebookPage(this.facebook);
@@ -13,13 +14,17 @@ class FacebookPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.facebook,
+            size: 32.0,
+            color: Color.fromRGBO(59, 89, 152, 1),
+          ),
           key: PageStorageKey<Facebook>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
-                color: Color.fromRGBO(66, 103, 178, 1.0),
+                color: Colors.blueAccent,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

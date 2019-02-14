@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Flickr.dart';
 import 'package:sneakin/view/flickr/FlickrDetailPage.dart';
 
@@ -13,13 +14,17 @@ class FlickrPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.flickr,
+            size: 32.0,
+            color: Color.fromRGBO(244, 0, 131, 1),
+          ),
           key: PageStorageKey<Flickr>(root),
           title: Center(
               child: Text(
             root.title,
-            
             style: TextStyle(
+                color: Colors.blueAccent,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

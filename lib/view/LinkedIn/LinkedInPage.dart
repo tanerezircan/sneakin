@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/LinkedIn.dart';
 import 'package:sneakin/view/LinkedIn/LinkedInDetailPage.dart';
 
@@ -13,13 +14,17 @@ class LinkedInPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.linkedin,
+            size: 32.0,
+            color: Color.fromRGBO(0, 119, 181, 1),
+          ),
           key: PageStorageKey<LinkedIn>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
-                color: Color.fromRGBO(0, 119, 181, 1.0),
+                color: Colors.black87,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [

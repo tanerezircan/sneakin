@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:sneakin/model/Twitter.dart';
 import 'package:sneakin/view/twitter/TwitterDetailPage.dart';
 
@@ -13,13 +14,17 @@ class TwitterPage extends StatelessWidget {
         color: ThemeData.light().canvasColor,
         child: ExpansionTile(
           trailing: Text("Detail"),
-          leading: root.icon,
+          leading: Icon(
+            MdiIcons.twitter,
+            size: 32.0,
+            color: Color.fromRGBO(29, 161, 242, 1),
+          ),
           key: PageStorageKey<Twitter>(root),
           title: Center(
               child: Text(
             root.title,
             style: TextStyle(
-                color: Color.fromRGBO(56, 161, 243, 1.0),
+                color: Colors.black87,
                 fontStyle: FontStyle.italic,
                 fontWeight: FontWeight.bold,
                 shadows: [
