@@ -243,7 +243,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/emre.fikirlier",
                   image: Image.asset("assets/images/emre_taners.png")),
-              Facebook(),
             ]);
 
         final socialDataTwitter = Twitter(
@@ -298,7 +297,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Twitter(),
             ]);
 
         final socialDataInstagram = Instagram(
@@ -353,7 +351,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Instagram(),
             ]);
         final socialDataLinkedIn = LinkedIn(
             title: "LinkedIn",
@@ -407,7 +404,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              LinkedIn(),
             ]);
 
         final socialDataYoutube = Youtube(
@@ -459,7 +455,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Youtube(),
             ]);
 
         final socialDataGmail = Gmail(
@@ -538,7 +533,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Gmail(),
             ]);
 
         final socialDataFlickr = Flickr(
@@ -593,7 +587,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Flickr(),
             ]);
 
         final socialDataPinterest = Pinterest(
@@ -648,7 +641,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Pinterest(),
             ]);
 
         final socialDataSoundcloud = Soundcloud(
@@ -703,7 +695,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Soundcloud(),
             ]);
 
 /*
@@ -818,7 +809,6 @@ class _SneakSearchPageState extends State<SneakSearchPage> {
                   address: Address(street: "Kentucky"),
                   linkId: "www.facebook.com/taner.ezircan",
                   image: Image.asset("assets/images/taners.png")),
-              Tumblr(),
             ]);
 
         final List<dynamic> socialData = <dynamic>[
